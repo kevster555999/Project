@@ -2,4 +2,14 @@
 
 from flask import *
 
-print Hello World
+app=Flask(__name__)
+app.secret_key= "myProjOfAwesomeNess"
+
+
+
+
+if __name__ = "__main__":
+
+
+
+print "Hello World"

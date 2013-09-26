@@ -4,12 +4,13 @@ from flask import *
 
 app=Flask(__name__)
 app.secret_key= "myProjOfAwesomeNess"
+logged_in=False
+
+@app.route("/")
+def run():
+    return render_template("home.html")
 
 
 
-
-if __name__ = "__main__":
-
-
-
-print "Hello World"
+if __name__ == "__main__":
+    app.run(debug=True,port = 9000)

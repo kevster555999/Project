@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html>
@@ -11,18 +12,42 @@
 <i> Hello </i> <br>
 <strong> This is the same as bold but 'better' </strong> <br>
 <em> YESSSSS </em> <br>
-Hi man <sub> lol </sub> yo <sup> damn </sup>
+Hi man <sub> lol </sub> yo <sup> damn </sup> <br>
+<ins> What does this do </ins> <br>
+<del> What, it crosses out  </del> <br>
+<mark> Mark? </mark>
 </p2><br>
 <p>
 Enter Username <input type = "Username" name = "Username" > <br>
 Enter PassWord <input type = "Password" name = "Password" > <br>
 </p>
-<a href = "https://www.facebook.com/han.j.lee.7" >
+<button type = "submit" name="login" id = "login">Login</button>
+<br> <a href = "https://www.facebook.com/han.j.lee.7" >
 Look at my awesome Facebook </a> <br>
 <img src = "http://fc08.deviantart.net/fs70/f/2010/319/e/e/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" alt = "Luffy Vs Admirals" border = "20" width = "400" height = "400"> <br>
 <img scr = "/desktop/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" border = "10" alt = "Same image" width ="200" height = "200"> <br>
-<!-- This is how you comment -- >
-<p2><b> Hi yo </b><p2>
+
+<h2> LOL WORK </h2>
+<p2>
+<b> Hi yo </b>
+<pre>      Does this work? </pre>
+<var> huh </var> <br>
+<a href = "http://www.google.com" target = "_blank"> Lets check out my favorite search engine. GOOGLE! </a> 
+<p2>
 </body>
 
 </html>
+=======
+<h1> HANJIE IS A NOOOOOOOB</h1>
+<p1> This is why hanjie is a noob </p1>
+
+<form method="POST">
+<p>
+Enter Username <input type="Username" name="Username">
+<br>
+Enter Password <input type="Password" name="Password"> 
+</p>
+<button type="submit" name="login" value="login" id="login">Login</button>
+
+</form>
+>>>>>>> f1b1371ab74cd81a3e05cc8c0ba6123bda140e9a

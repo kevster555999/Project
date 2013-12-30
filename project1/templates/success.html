@@ -1,0 +1,53 @@
+<h1> HKB wars </h1>
+<h2> Ready to experience the thrill of your life?! </h2>
+<center> <canvas id = "HKB" width = "750" height = "500" style = "border:1px solid #000000;"  > </canvas>
+</center>
+<script>
+var c=document.getElementById("HKB");
+var ctx=c.getContext("2d");
+<!--ctx.fillStyle= "#FF0000";-->
+<!--ctx.fillRect(0,0,70,70);-->
+
+function drawRect(x0,y0,x1,y1,color)
+{
+ctx.fillStyle=color;
+ctx.fillRect(x0,y0,x1,y1);
+}
+
+function drawCircle(x,y,radius,color)
+{
+ctx.fillStyle=color;
+ctx.beginPath();
+ctx.arc(x,y,radius,0,2*Math.PI);
+ctx.stroke();
+ctx.fill();
+}
+
+function drawGrid(){
+for(var i=0;i<750;i=i+10)
+{
+ctx.moveTo(i,0);
+ctx.lineTo(i,750);
+ctx.stroke();
+}
+for(var i=0;i<500;i=i+10)
+{
+ctx.moveTo(0,i);
+ctx.lineTo(750,i);
+ctx.stroke();
+}
+}
+
+
+
+
+drawCircle(370,250,100,"yellow");
+ctx.clearRect(0,0,750,500);
+ctx.beginPath();
+drawGrid();
+drawRect(0,0,100,100,"green");
+drawRect(750,500,-100,-100,"green");
+drawRect(0,0,70,70,"red");
+drawRect(750,500,-70,-70,"blue");
+
+</script>

@@ -1,7 +1,16 @@
-<<<<<<< HEAD
+
 
 <!DOCTYPE html>
 <html>
+<head>
+<title> Hello This site is a Troll  </title>
+<style type = "text/css" >
+body {background-color:yellow}
+p {color:blue;}
+p1 {color:red;}
+p2 {color:green:}
+</style>
+</head>
 
 <body>
 
@@ -25,7 +34,7 @@ Enter PassWord <input type = "Password" name = "Password" > <br>
 <br> <a href = "https://www.facebook.com/han.j.lee.7" >
 Look at my awesome Facebook </a> <br>
 <img src = "http://fc08.deviantart.net/fs70/f/2010/319/e/e/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" alt = "Luffy Vs Admirals" border = "20" width = "400" height = "400"> <br>
-<img scr = "/desktop/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" border = "10" alt = "Same image" width ="200" height = "200"> <br>
+<img scr = "/static/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" border = "10" alt = "Same image" width ="200" height = "200"> <br>
 
 <h2> LOL WORK </h2>
 <p2>
@@ -36,8 +45,6 @@ Look at my awesome Facebook </a> <br>
 <p2>
 </body>
 
-</html>
-=======
 <h1> HANJIE IS A NOOOOOOOB</h1>
 <p1> This is why hanjie is a noob </p1>
 
@@ -50,4 +57,5 @@ Enter Password <input type="Password" name="Password">
 <button type="submit" name="login" value="login" id="login">Login</button>
 
 </form>
->>>>>>> f1b1371ab74cd81a3e05cc8c0ba6123bda140e9a
+
+</html>

@@ -6,6 +6,8 @@ app=Flask(__name__)
 app.secret_key= "myProjOfAwesomeNess"
 #logged_in=False
 
+
+
 @app.route("/")
 def redirectHome():
     return redirect(url_for("home"))
@@ -13,13 +15,18 @@ def redirectHome():
 @app.route("/home",methods=["GET","POST"])
 def home():
     if request.method == 'GET':
+        logged_in = False
+        if 'user' in session:
+                del session['user']
         return render_template('home.html')
     if request.method == 'POST':
         button = request.form["login"]
         if button == "login":
             Username = request.form["Username"]
             Password = request.form["Password"]
-            if Username == "Kevin" and Password == "Huang":
+            if Username in "kevin" and Password == "huang":
+                logged_in = True
+                session['user']=request.form['Username']
                 return redirect(url_for('success'))
             return redirect(url_for('failed'))
 
@@ -34,6 +41,8 @@ def failed():
 
 @app.route("/success")
 def success():
+    if 'user' not in session:
+        return redirect(url_for('wrong'))
     return render_template("success.html")
 
 if __name__ == "__main__":

@@ -1,2 +1,93 @@
-<h1> SUCCESSS </h1>
+<h1> HKB wars </h1>
+<h2> Ready to experience the thrill of your life?! </h2>
+<center> <canvas id = "HKB" width = "750" height = "500" style = "border:1px solid #000000;"  > </canvas>
+</center>
+<script>
+var c=document.getElementById("HKB");
+var ctx=c.getContext("2d");
+var Circle1 = new Circle(0,0,2,"blue");
 
+
+
+initiate();
+window.setInterval(draw,100);
+
+
+function draw(){
+	ctx.clearRect(0,0,750,500);
+	ctx.beginPath();
+
+//		drawGrid();
+	drawRect(0,0,100,100,"green");
+	drawRect(750,500,-100,-100,"green");
+	drawRect(0,0,70,70,"red");
+	drawRect(750,500,-70,-70,"blue");	
+
+	drawMyCircle();
+}
+
+function Circle(xcor,ycor,r,color){
+	this.xcor=xcor;
+	this.ycor=ycor;
+	this.r=r;
+	this.color=color
+}
+
+Circle.prototype.changeCoordinate=function(x,y){
+	this.xcor=x;
+	this.ycor=y;
+}
+
+
+function drawRect(x0,y0,x1,y1,color){
+	ctx.fillStyle=color;
+	ctx.fillRect(x0,y0,x1,y1);
+}
+
+function drawCircle(C){
+	ctx.fillStyle=C.color;
+	ctx.beginPath();
+	ctx.arc(C.xcor,C.ycor,C.r,0,2*Math.PI);
+	ctx.stroke();
+	ctx.fill();
+}
+
+function drawGrid(){
+	for(var i=0;i<750;i=i+10){
+		ctx.moveTo(i,0);
+		ctx.lineTo(i,750);
+		ctx.stroke();
+	}
+	for(var i=0;i<500;i=i+10){
+		ctx.moveTo(0,i);
+		ctx.lineTo(750,i);
+		ctx.stroke();
+	}
+}
+				
+
+function initiate(){
+	ctx.clearRect(0,0,750,500);
+	ctx.beginPath();
+
+//	drawGrid();
+	drawRect(0,0,100,100,"green");
+	drawRect(750,500,-100,-100,"green");
+	drawRect(0,0,70,70,"red");
+	drawRect(750,500,-70,-70,"blue");
+}
+
+function drawMyCircle(){
+	Circle1.changeCoordinate(Circle1.xcor + 10, Circle1.ycor + 10);
+	Circle1.move();
+	drawCircle(Circle1);
+}
+
+function move(){
+		
+}
+
+
+
+
+</script>

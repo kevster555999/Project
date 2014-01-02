@@ -1,2 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Hello This site is a Troll  </title>
+<style type = "text/css" >
+body {background-color:yellow}
+p {color:blue;}
+p1 {color:red;}
+p2 {color:green:}
+</style>
+</head>
+
+<body>
+
+<h1> Hanjie Lee is awesome</h1> <hr>
+<p1> He is so KAWAIIIIII~ </p1> <br> 
+<p2> I wish I was like him <br>
+<b> Hi yo </b> <br>
+<i> Hello </i> <br>
+<strong> This is the same as bold but 'better' </strong> <br>
+<em> YESSSSS </em> <br>
+Hi man <sub> lol </sub> yo <sup> damn </sup> <br>
+<ins> What does this do </ins> <br>
+<del> What, it crosses out  </del> <br>
+<mark> Mark? </mark>
+</p2><br>
+<p>
+Enter Username <input type = "Username" name = "Username" > <br>
+Enter PassWord <input type = "Password" name = "Password" > <br>
+</p>
+<button type = "submit" name="login" id = "login">Login</button>
+<br> <a href = "https://www.facebook.com/han.j.lee.7" >
+Look at my awesome Facebook </a> <br>
+<img src = "http://fc08.deviantart.net/fs70/f/2010/319/e/e/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" alt = "Luffy Vs Admirals" border = "20" width = "400" height = "400"> <br>
+<img scr = "/static/luffy_vs__3_admirals_by_dbzzfox-d32w7wq.jpg" border = "10" alt = "Same image" width ="200" height = "200"> <br>
+
+<h2> LOL WORK </h2>
+<p2>
+<b> Hi yo </b>
+<pre>      Does this work? </pre>
+<var> huh </var> <br>
+<a href = "http://www.google.com" target = "_blank"> Lets check out my favorite search engine. GOOGLE! </a> 
+<p2>
+</body>
+
 <h1> HANJIE IS A NOOOOOOOB</h1>
 <p1> This is why hanjie is a noob </p1>
+
+<form method="POST">
+<p>
+Enter Username <input type="Username" name="Username">
+<br>
+Enter Password <input type="Password" name="Password"> 
+</p>
+<button type="submit" name="login" value="login" id="login">Login</button>
+
+</form>
+
+</html>

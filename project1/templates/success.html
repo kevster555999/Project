@@ -1,22 +1,29 @@
 <h1> HKB wars </h1>
 <h2> Ready to experience the thrill of your life?! </h2>
-<center> <canvas id = "HKB" width = "750" height = "500" style = "border:1px solid #000000;"  > </canvas>
+<center> <canvas oncontextmenu="return false;" id = "HKB" width = "750" height = "500" style = "border:1px solid #000000;"  > </canvas>
 </center>
 <script>
+
 var c=document.getElementById("HKB");
+//c.addEventListener("mouseout",findMousePosition,false);
+c.addEventListener("mousedown",findMousePosition,false);
+//c.addEventListener("mousemove",findMousePosition,false);
 var ctx=c.getContext("2d");
-var Circle1 = new Circle(0,0,2,"blue");
-
-
+var pixelData = ctx.getImageData(0,0,750,500);
+var Circle1 = new Circle(150,100,2,"blue");
+var Circle2 = new Circle(200,100,2,"blue");
+var myCircles = [Circle1,Circle2];
+var mouseX=0;
+var mouseY=0;
 
 initiate();
 window.setInterval(draw,100);
 
-
 function draw(){
 	ctx.clearRect(0,0,750,500);
 	ctx.beginPath();
-
+	pixelData = ctx.getImageData(0,0,750,500);
+	pixelArray = pixelData.data;
 //		drawGrid();
 	drawRect(0,0,100,100,"green");
 	drawRect(750,500,-100,-100,"green");
@@ -30,7 +37,7 @@ function Circle(xcor,ycor,r,color){
 	this.xcor=xcor;
 	this.ycor=ycor;
 	this.r=r;
-	this.color=color
+	this.color=color;
 }
 
 Circle.prototype.changeCoordinate=function(x,y){
@@ -52,6 +59,12 @@ function drawCircle(C){
 	ctx.fill();
 }
 
+function drawMultipleCircles(C){
+	for(var i =0; i<C.length; i++){
+		drawCircle(C[i]);
+	}
+}
+
 function drawGrid(){
 	for(var i=0;i<750;i=i+10){
 		ctx.moveTo(i,0);
@@ -65,7 +78,6 @@ function drawGrid(){
 	}
 }
 				
-
 function initiate(){
 	ctx.clearRect(0,0,750,500);
 	ctx.beginPath();
@@ -77,16 +89,48 @@ function initiate(){
 	drawRect(750,500,-70,-70,"blue");
 }
 
+function findMousePosition(e){
+	e = e || window.event;
+	
+	switch(e.which){
+		case 1: alert ('left');break;
+		case 2: alert ('middle');break;
+		case 3: setMousePosition();break;
+	}	
+}
+
+function setMousePosition(){
+	mouseX=event.pageX - 230;
+	mouseY=event.pageY - 115;
+	ctx.fillText("x= "+ mouseX  + " " + "y= " + mouseY, 370,250);
+}
+
 function drawMyCircle(){
-	Circle1.changeCoordinate(Circle1.xcor + 10, Circle1.ycor + 10);
-	Circle1.move();
-	drawCircle(Circle1);
+	//Circle1.changeCoordinate(Circle1.xcor + 10, Circle1.ycor + 10);
+	//Circle1.move();
+	move(myCircles);
+	drawMultipleCircles(myCircles);
 }
 
-function move(){
-		
+function move(myObject){
+	//var tmp = true;
+	for (var i =0; i < myObject.length;i++){
+		if ((myObject[i].xcor != mouseX || myObject[i].ycor != mouseY) ){
+			if(myObject[i].xcor > mouseX ){
+			myObject[i].xcor = myObject[i].xcor - 5;
+			}
+			if(myObject[i].xcor < mouseX){
+				myObject[i].xcor = myObject[i].xcor + 5;
+			}
+			if(myObject[i].ycor < mouseY){
+				myObject[i].ycor = myObject[i].ycor + 5;
+			}
+			if(myObject[i].ycor > mouseY){
+				myObject[i].ycor = myObject[i].ycor - 5;
+			}
+		}
+	}
 }
-
 
 
 

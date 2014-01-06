@@ -15,6 +15,11 @@ var Circle2 = new Circle(200,100,2,"blue");
 var myCircles = [Circle1,Circle2];
 var mouseX=0;
 var mouseY=0;
+var Base1 = new Base(0,0,100,100,"green");
+var Base2 = new Base(750,500,-100,-100,"green");
+var Base3 = new Base(0,0,70,70,"red");
+var Base4 = new Base(750,500,-70,-70,"blue");
+var Bases = [Base1,Base2,Base3,Base4];
 
 initiate();
 window.setInterval(draw,100);
@@ -25,12 +30,24 @@ function draw(){
 	pixelData = ctx.getImageData(0,0,750,500);
 	pixelArray = pixelData.data;
 //		drawGrid();
-	drawRect(0,0,100,100,"green");
-	drawRect(750,500,-100,-100,"green");
-	drawRect(0,0,70,70,"red");
-	drawRect(750,500,-70,-70,"blue");	
+	for(var i=0;i<Bases.length;i++){
+		Bases[i].display();
+	}
 
 	drawMyCircle();
+}
+
+function Base(xcor,ycor,width,height,color){
+	this.xcor=xcor;
+	this.ycor=ycor;
+	this.width=width;
+	this.height=height;
+	this.color=color;
+	this.display = function(){
+		drawRect (xcor, ycor, width, height, color);
+	};
+	this.displayMenu = function(){
+	};
 }
 
 function Circle(xcor,ycor,r,color){
